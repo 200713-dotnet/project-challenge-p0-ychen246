@@ -46,23 +46,28 @@ namespace PizzaStore.Client
 				int select;
 
 				int.TryParse(Console.ReadLine(), out select);
+				
 
 				switch (select)
 				{
 					case 1:
-                        order.CreatePizza("L", "Stuffed", new List<string>{"cheese"});
+						String PizzaSize = SelectSize();
+                        order.CreatePizza("Cheese Pizza", PizzaSize , "Regular", new List<string>{"Cheese"});
 						System.Console.WriteLine("Added Cheese Pizza");
 						break;
 					case 2:
-						order.CreatePizza("L", "Stuffed", new List<string>{"pepperoni"});
+						PizzaSize = SelectSize();
+                        order.CreatePizza("Cheese Pizza", PizzaSize , "Regular", new List<string>{"Pepperoni"});
 						System.Console.WriteLine("Added Pepperoni Pizza");
 						break;
 					case 3:
-						order.CreatePizza("L", "Stuffed", new List<string>{"pineapple"});
-						System.Console.WriteLine("Added Pineapple Pizza");
+						PizzaSize = SelectSize();
+                        order.CreatePizza("Sausage Pizza", PizzaSize , "Regular", new List<string>{"Sausage"});
+						System.Console.WriteLine("Added Sausage Pizza");
 						break;
 					case 4:
-						order.CreatePizza("L", "Stuffed", new List<string>{"custom"});
+						PizzaSize = SelectSize();
+                        order.CreatePizza("Custom Pizza", PizzaSize , "Regular", new List<string>{});
 						System.Console.WriteLine("Added CustomPizza");
 						break;
 					case 5:
@@ -80,9 +85,13 @@ namespace PizzaStore.Client
 						break;
 				}
 
-				//DisplayCart(cart); 
-
 			} while (!exit);
+		}
+
+		static string SelectSize()
+		{
+			System.Console.WriteLine("Please select a size: Small, Medium, or Large");
+			return System.Console.ReadLine();
 		}
 
 		static void DisplayCart(Order order)

@@ -11,7 +11,7 @@ create table Pizza.Pizza
 (
 	PizzaId int not null primary key,
 	PizzaName nvarchar(250),
-	Size int not null,
+	Size nvarchar(250),
 	Price money
 )
 go

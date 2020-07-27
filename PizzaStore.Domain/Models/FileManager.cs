@@ -16,7 +16,7 @@ namespace PizzaStore.Domain.Models
 
 		public void Write(Order order)
 		{
-			// var path = @"data/pizza_store.xml";  // Create a file.
+			//var path = @"data/pizza_store.xml";  // Create a file.
 			var writer = new StreamWriter(_path); //Open File with write permission
 			var xml = new XmlSerializer(typeof(Order)); //Load Content to Write.
 			xml.Serialize(writer, order); // Convert content to xml

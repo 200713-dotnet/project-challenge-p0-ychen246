@@ -6,21 +6,26 @@ namespace PizzaStore.Domain.Models
   public class Pizza
   {
     
-    private List<string> Toppings = new List<string>();
+    private List<string> toppings = new List<string>();
 
     public string Name {get; set;}
     public string Crust { get; set;}
     public string Size { get; set;}
-    public List<string> Toppings {get; set;}
+    public List<string> Toppings
+    {
+      get
+      {
+        return toppings; 
+      }
+    }
     public double Price {get; set;}
 
-    public Pizza(string name, string size, string crust, List<string> toppings, double price)
+    public Pizza(string name, string size, string crust, List<string> toppings)
     {
       Name = name;
       Size = size;
       Crust = crust;
       Toppings.AddRange(toppings);
-      Price = price;
     }
 
 	public Pizza()
