@@ -91,8 +91,23 @@ namespace PizzaStore.Client
 
 		static string SelectSize()
 		{
-			System.Console.WriteLine("Please select a size: Small, Medium, or Large");
-			return System.Console.ReadLine();
+			System.Console.WriteLine("Please select a size: 1 for Small, 2 for Medium, or 3 for Large");
+			int select;
+			int.TryParse(Console.ReadLine(), out select);
+			string PizzaSize = null;
+			switch(select)
+			{
+				case 1:
+					PizzaSize = "small";
+					break;
+				case 2:
+					PizzaSize = "medium";
+					break;
+				case 3:
+					PizzaSize = "large";
+					break;
+			}
+			return PizzaSize;
 		}
 
 		static List<string> ChooseTopping()

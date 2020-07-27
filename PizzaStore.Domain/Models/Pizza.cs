@@ -18,7 +18,25 @@ namespace PizzaStore.Domain.Models
         return toppings; 
       }
     }
-    public double Price {get; set;}
+    public double Price 
+    {
+      get
+      {
+        switch(Size)
+        {
+          case "small":
+            return 5.00 + toppings.Count * .50;
+            break;
+          case "medium":
+            return 7.00 + toppings.Count * .50;
+            break;
+          case "large":
+            return 9.00 + toppings.Count * .50;
+            break;
+        }
+        return 0;
+      }
+    }
 
     public Pizza(string name, string size, string crust, List<string> toppings)
     {
@@ -28,10 +46,10 @@ namespace PizzaStore.Domain.Models
       Toppings.AddRange(toppings);
     }
 
-	public Pizza()
-	{
+  public Pizza()
+  {
   
-	}
+  }
 
     void AddToppings(string topping)
     {
@@ -47,7 +65,7 @@ namespace PizzaStore.Domain.Models
         sb.Append(t + ", ");
       }
 
-      return $"{Name} \n{Size} \n{Crust} crust \nTopping: {sb} \n";
+      return $"{Name} \n{Size} \n{Crust} crust \nTopping: {sb} \n{Price} \n";
     }
   }
 }
