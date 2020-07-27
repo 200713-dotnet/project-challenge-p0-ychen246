@@ -1,3 +1,6 @@
+use master;
+go
+
 create database PizzaStoreDB;
 go
 
@@ -18,7 +21,7 @@ go
 
 create table Pizza.Pizza
 (
-	PizzaId int not null primary key,
+	PizzaId int not null primary key identity (1,1),
 	PizzaName nvarchar(250),
 	Size nvarchar(250),
 	Price money
@@ -27,7 +30,7 @@ go
 
 create table Pizza.Topping
 (
-	ToppingId int not null primary key,
+	ToppingId int not null primary key identity (1,1),
 	PizzaId int not null foreign key references Pizza.Pizza(PizzaId),
 	ToppingName nvarchar(250),
 )
@@ -35,7 +38,7 @@ go
 
 create table Users.Users
 (
-	UserId int not null primary key,
+	UserId int not null primary key identity (1,1),
 	FirstName nvarchar(250),
 	LastName nvarchar(250),
 )
@@ -43,7 +46,7 @@ go
 
 create table Orders.Orders
 (
-	OrderId int not null primary key,
+	OrderId int not null primary key identity (1,1),
 	PurchaseDate datetime2(0) not null,
 	TotalPrice money not null,
 	UserId int not null foreign key references Users.Users(UserId),
@@ -52,7 +55,7 @@ go
 
 create table Orders.PizzaOrder
 (
-	PizzaOrderId int not null primary key,
+	PizzaOrderId int not null primary key identity (1,1),
 	PizzaId int not null foreign key references Pizza.Pizza(PizzaId),
 	OrderId int not null foreign key references Orders.Orders(OrderId),
 )
@@ -60,7 +63,7 @@ go
 
 create table Stores.Stores
 (
-	StoreId int not null primary key,
+	StoreId int not null primary key identity (1,1),
 	StoreName nvarchar(250),
 	StoreAddress nvarchar(500)
 )
@@ -68,7 +71,7 @@ go
 
 create table Stores.StoreOrders
 (
-	StoreOrdersId int not null primary key,
+	StoreOrdersId int not null primary key identity (1,1),
 	StoreId int not null foreign key references Stores.Stores(StoreId),
 	OrderId int not null foreign key references Orders.Orders(OrderId),
 	Complete bit not null, 
