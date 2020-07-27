@@ -57,7 +57,7 @@ namespace PizzaStore.Client
 						break;
 					case 2:
 						PizzaSize = SelectSize();
-                        order.CreatePizza("Cheese Pizza", PizzaSize , "Regular", new List<string>{"Pepperoni"});
+                        order.CreatePizza("Pepperoni Pizza", PizzaSize , "Regular", new List<string>{"Pepperoni"});
 						System.Console.WriteLine("Added Pepperoni Pizza");
 						break;
 					case 3:
@@ -67,7 +67,8 @@ namespace PizzaStore.Client
 						break;
 					case 4:
 						PizzaSize = SelectSize();
-                        order.CreatePizza("Custom Pizza", PizzaSize , "Regular", new List<string>{});
+						List<string> toppings = ChooseTopping();
+                        order.CreatePizza("Custom Pizza", PizzaSize , "Regular", toppings);
 						System.Console.WriteLine("Added CustomPizza");
 						break;
 					case 5:
@@ -92,6 +93,65 @@ namespace PizzaStore.Client
 		{
 			System.Console.WriteLine("Please select a size: Small, Medium, or Large");
 			return System.Console.ReadLine();
+		}
+
+		static List<string> ChooseTopping()
+		{
+			int select;
+			Boolean cont = true;
+			List<string> toppings = new List<string>(); 
+
+			do{
+				System.Console.WriteLine("Select from the list of topping:");
+				System.Console.WriteLine("1. Cheese");
+				System.Console.WriteLine("2. Pepperoni");
+				System.Console.WriteLine("3. Sausage");
+				System.Console.WriteLine("4. Mushroom");
+				System.Console.WriteLine("5. Jalapeno");
+				System.Console.WriteLine("6. Pineapple");
+				if (toppings.Count >= 2)
+				{
+					System.Console.WriteLine("7. Done adding Topping"); //Require at least 2 topping for a custom pizza.
+				}
+
+				int.TryParse(Console.ReadLine(), out select);
+
+				switch(select)
+				{
+					case 1:
+						toppings.Add("Cheese");
+						break;
+					case 2:
+						toppings.Add("Pepperoni");
+						break;
+					case 3:
+						toppings.Add("Sausage");
+						break;
+					case 4:
+						toppings.Add("Mushroom");
+						break;
+					case 5:
+						toppings.Add("Jalapeno");
+						break;
+					case 6:
+						toppings.Add("Pineapple");
+						break;
+					case 7:
+						if (toppings.Count >= 2)
+						{	
+							cont = false;
+						}
+						break;
+				}
+
+				if (toppings.Count == 5)
+				{
+					System.Console.WriteLine("You can not add any more toppings.");
+					cont = false;
+				}
+			} while(cont == true);
+
+			return toppings;
 		}
 
 		static void DisplayCart(Order order)

@@ -30,7 +30,7 @@ namespace PizzaStore.Domain.Models
 
 	public Pizza()
 	{
-
+  
 	}
 
     void AddToppings(string topping)
@@ -47,7 +47,7 @@ namespace PizzaStore.Domain.Models
         sb.Append(t + ", ");
       }
 
-      return $"{Crust} \n{Size} \n{sb} \n";
+      return $"{Name} \n{Size} \n{Crust} crust \nTopping: {sb} \n";
     }
   }
 }
