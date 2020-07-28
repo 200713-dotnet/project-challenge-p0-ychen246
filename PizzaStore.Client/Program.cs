@@ -14,28 +14,70 @@ namespace PizzaStore.Client
 		static void Welcome()
 		{
 			System.Console.WriteLine("Welcome to Pizza Ordering Service!");
+			System.Console.WriteLine("Would you like service for User or Store?");
+			if(System.Console.ReadLine().Equals("user", StringComparison.InvariantCultureIgnoreCase))
+			{
+				UserMenu();
+			}
+			else if(System.Console.ReadLine().Equals("store", StringComparison.InvariantCultureIgnoreCase))
+			{
+				StoreMenu();
+			}
+			
+		}
+
+		static void UserMenu()
+		{
 			System.Console.WriteLine("May I have your first name?");
 			string fn = Console.ReadLine();
 			System.Console.WriteLine("May I have your last name?");
 			string ln = Console.ReadLine();
-			
 
 			var starter = new Starter();
       		var user = new User(fn, ln);
    			var store = new Store();
-			
-			try
-			{
-				Menu(starter.CreateOrder(user, store));
-			}
-			catch (Exception ex)
-			{
-				System.Console.WriteLine(ex.Message);
-			}
 
+			System.Console.WriteLine("Enter 1 for new orders or 2 to view order history.");
+			int select;
+			int.TryParse(Console.ReadLine(), out select);
+			switch(select)
+			{
+				case 1:
+					try
+					{
+						OrderMenu(starter.CreateOrder(user, store));
+					}
+					catch (Exception ex)
+					{
+						System.Console.WriteLine(ex.Message);
+					}
+					break;
+				case 2:
+					
+					break;
+			}
 		}
 
-		static void Menu(Order order)
+		static void StoreMenu()
+		{
+			System.Console.WriteLine("The name of the store?");
+			string sn = Console.ReadLine();
+			System.Console.WriteLine("The address of the store?");
+			string sa = Console.ReadLine();
+
+			System.Console.WriteLine("Enter 1 to see order history or 2 for sales.");
+			int select;
+			int.TryParse(Console.ReadLine(), out select);
+			switch(select)
+			{
+				case 1:
+					break;
+				case 2:
+					break;
+			}
+		}
+
+		static void OrderMenu(Order order)
 		{
 			var exit = false;
 			Pizza p = new Pizza();
