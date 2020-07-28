@@ -43,5 +43,15 @@ namespace PizzaStore.Domain.Models
 				return sum;
 			}
 		}
+
+		public void ListPizzaOrder(Order order)
+		{
+			int counter = 1;
+			foreach (Pizza p in order.Pizzas)
+			{
+				System.Console.WriteLine("Pizza " + counter + " ; " + p);
+				counter += 1;
+			}
+		}
 	}
 }

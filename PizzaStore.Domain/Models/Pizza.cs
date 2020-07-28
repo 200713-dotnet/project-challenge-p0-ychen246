@@ -63,7 +63,7 @@ namespace PizzaStore.Domain.Models
         sb.Append(t + ", ");
       }
 
-      return $"{Name} \n{Size} \n{Crust} crust \nTopping: {sb} \n{Price} \n";
+      return $"{Name} ; {Size} ; {Crust} Crust ; Topping: {sb} ; {Price}";
     }
 
     public string SelectSize() 

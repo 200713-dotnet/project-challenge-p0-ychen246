@@ -38,7 +38,8 @@ namespace PizzaStore.Client
 		static void Menu(Order order)
 		{
 			var exit = false;
-			
+			Pizza p = new Pizza();
+			Order o = new Order();
 			do
 			{
 				Starter.PrintMenu();
@@ -46,7 +47,7 @@ namespace PizzaStore.Client
 				int select;
 				int.TryParse(Console.ReadLine(), out select);
 
-				Pizza p = new Pizza();
+				
 
 				switch (select)
 				{
@@ -72,7 +73,7 @@ namespace PizzaStore.Client
 						System.Console.WriteLine("Added CustomPizza");
 						break;
 					case 5:
-						DisplayCart(order);
+						o.ListPizzaOrder(order);
 						System.Console.WriteLine("Your total price is: $" + order.PriceOrder + "0"); //Display Total Price with cart.
 						break;
 					case 6:
@@ -90,14 +91,6 @@ namespace PizzaStore.Client
 			} while (!exit);
 
 			
-		}
-
-		static void DisplayCart(Order order)
-		{
-			foreach (var pizza in order.Pizzas)
-			{
-				System.Console.WriteLine(pizza);
-			}
 		}
 	}
 }
