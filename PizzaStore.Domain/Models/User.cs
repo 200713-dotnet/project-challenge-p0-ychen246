@@ -5,8 +5,8 @@ namespace PizzaStore.Domain.Models
 	public class User
 	{
 		public List<Order> Orders {get;}
-		string firstname {get; set;}
-		string lastname {get; set;} 
+		public string firstname {get; set;}
+		public string lastname {get; set;} 
 
 		public User(string fn, string ln)
 		{

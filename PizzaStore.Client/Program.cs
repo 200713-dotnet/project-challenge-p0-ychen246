@@ -34,6 +34,9 @@ namespace PizzaStore.Client
 			string fn = Console.ReadLine();
 			System.Console.WriteLine("May I have your last name?");
 			string ln = Console.ReadLine();
+			var user = new User(fn, ln);
+			UserRepository ur = new UserRepository();
+			ur.Create(user);
 
 			System.Console.WriteLine("Please select a Store.");
 			StoreRepository sr = new StoreRepository();
@@ -47,12 +50,9 @@ namespace PizzaStore.Client
 
 			int select;
 			int.TryParse(Console.ReadLine(), out select);
-
+			var store = stores[select-1];
+		
 			var starter = new Starter();
-      		var user = new User(fn, ln);
-   			var store = new Store();
-
-			
 
 			System.Console.WriteLine("Enter 1 for new orders or 2 to view order history.");
 			int.TryParse(Console.ReadLine(), out select);

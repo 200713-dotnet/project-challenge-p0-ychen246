@@ -9,15 +9,20 @@ namespace PizzaStore.Storing.Repositories
 	{
 		private PizzaStoreDBContext _db = new PizzaStoreDBContext();
 
-		public void Create(domain.Pizza pizza)
+		public void Create(domain.User User)
 		{
-			
+			var newUser = new Users();
+			newUser.FirstName = User.firstname;
+			newUser.LastName = User.lastname;
+
+			_db.Users.Add(newUser);
+			_db.SaveChanges();
 		}
 
 		public List<domain.User> ReadAll()
 		{
 			var domainUsersList = new List<domain.User>();
-			
+			//Obselete for now. Do not need to list all user.
 			return domainUsersList;
 		}
 
