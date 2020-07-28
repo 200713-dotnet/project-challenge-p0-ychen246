@@ -33,7 +33,7 @@ namespace PizzaStore.Client
 		System.Console.WriteLine("Select 3 to add Sausage Pizza");
 		System.Console.WriteLine("Select 4 to add Custom Pizza");
 		System.Console.WriteLine("Select 5 to Show Cart");
-		System.Console.WriteLine("Select 6 to Exit");
+		System.Console.WriteLine("Select 6 to Check Out/Exit");
 		System.Console.WriteLine();
 		}
 	}

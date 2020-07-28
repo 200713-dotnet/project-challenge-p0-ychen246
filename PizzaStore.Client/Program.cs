@@ -53,7 +53,7 @@ namespace PizzaStore.Client
 					}
 					break;
 				case 2:
-					
+
 					break;
 			}
 		}
@@ -119,15 +119,9 @@ namespace PizzaStore.Client
 						System.Console.WriteLine("Your total price is: $" + order.PriceOrder + "0"); //Display Total Price with cart.
 						break;
 					case 6:
-						//var fmw = new FileManager();
-						//fmw.Write(order);
 						System.Console.WriteLine("Thank You!");
 						exit = true;
 						break;
-					//case 7:
-						//var fmr = new FileManager();
-						//fmr.Read();
-					//	break;
 				}
 
 			} while (!exit);

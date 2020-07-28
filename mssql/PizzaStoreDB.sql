@@ -97,3 +97,8 @@ go
 --alter table Stores.StoreOrders
 	--add constraint OrderId foreign key references Orders.Orders(OrderId)
 	
+	insert into Stores.Stores(StoreName, StoreAddress) values ('Domino', '1234 Michigan Ave' )
+	go
+
+	insert into Stores.Stores(StoreName, StoreAddress) values ('Pizza Hut', '2345 California Ave' )
+	go
