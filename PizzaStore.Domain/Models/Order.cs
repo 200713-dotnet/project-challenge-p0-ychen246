@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace PizzaStore.Domain.Models
@@ -13,6 +14,17 @@ namespace PizzaStore.Domain.Models
 		public Order()
 		{
 			Pizzas = new List<Pizza>();
+		}
+
+		public decimal PriceOrder()
+		{
+			decimal sum;
+			sum = Convert.ToDecimal(0.00);
+			foreach (Pizza p in Pizzas)
+			{
+				sum += p.Price;
+			}
+			return sum;
 		}
 	}
 }

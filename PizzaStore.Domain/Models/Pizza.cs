@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -18,18 +19,18 @@ namespace PizzaStore.Domain.Models
         return toppings; 
       }
     }
-    public double Price 
+    public decimal Price 
     {
       get
       {
         switch(Size)
         {
           case "small":
-            return 5.00 + toppings.Count * .50;
+            return Convert.ToDecimal(5.00 + toppings.Count * .50);
           case "medium":
-            return 7.00 + toppings.Count * .50;
+            return Convert.ToDecimal(7.00 + toppings.Count * .50);
           case "large":
-            return 9.00 + toppings.Count * .50;
+            return Convert.ToDecimal(9.00 + toppings.Count * .50);
         }
         return 0;
       }

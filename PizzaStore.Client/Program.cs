@@ -73,6 +73,7 @@ namespace PizzaStore.Client
 						break;
 					case 5:
 						DisplayCart(order);
+						System.Console.WriteLine("Your total price is: $" + order.PriceOrder() + "0"); //Display Total Price with cart.
 						break;
 					case 6:
 						var fmw = new FileManager();
@@ -89,7 +90,7 @@ namespace PizzaStore.Client
 			} while (!exit);
 		}
 
-		static string SelectSize()
+		static string SelectSize() //Should probably be in Pizza object. Could move it later.
 		{
 			System.Console.WriteLine("Please select a size: 1 for Small, 2 for Medium, or 3 for Large");
 			int select;
@@ -110,7 +111,7 @@ namespace PizzaStore.Client
 			return PizzaSize;
 		}
 
-		static List<string> ChooseTopping()
+		static List<string> ChooseTopping() //Should probably be in Pizza object. Could move it later.
 		{
 			int select;
 			Boolean cont = true;
@@ -159,7 +160,7 @@ namespace PizzaStore.Client
 						break;
 				}
 
-				if (toppings.Count == 5)
+				if (toppings.Count == 5) //At most 5 topping requirement
 				{
 					System.Console.WriteLine("You can not add any more toppings.");
 					cont = false;
