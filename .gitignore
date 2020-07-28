@@ -2,3 +2,5 @@
 bin/
 obj/
 data/
+.vscode/launch.json
+.vscode/tasks.json

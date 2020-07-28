@@ -4,10 +4,11 @@
     <Pizza>
       <Name>Cheese Pizza</Name>
       <Crust>Regular</Crust>
-      <Size>small</Size>
+      <Size>Small</Size>
       <Toppings>
         <string>Cheese</string>
       </Toppings>
     </Pizza>
   </Pizzas>
+  <time>0001-01-01T00:00:00</time>
 </Order>
