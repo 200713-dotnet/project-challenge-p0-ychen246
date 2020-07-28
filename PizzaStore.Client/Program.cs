@@ -88,6 +88,8 @@ namespace PizzaStore.Client
 				}
 
 			} while (!exit);
+
+			
 		}
 
 		static string SelectSize() //Should probably be in Pizza object. Could move it later.
