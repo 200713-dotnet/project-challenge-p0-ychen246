@@ -62,17 +62,17 @@ namespace PizzaStore.Domain.Models
 
 		public void RemovePizza(Order order)
 		{
-		System.Console.WriteLine("Which Pizza would you like to remove? Enter the number");
-		int number;
-		int.TryParse(System.Console.ReadLine(), out number);
-		if (number < order.Pizzas.Count)
-		{
-			order.Pizzas.RemoveAt(number-1);
-		}
-		else
-		{
-			System.Console.WriteLine("Invalid number, please try again.")
-		}
+			System.Console.WriteLine("Which Pizza would you like to remove? Enter the number");
+			int number;
+			int.TryParse(System.Console.ReadLine(), out number);
+			if (number < order.Pizzas.Count)
+			{
+				order.Pizzas.RemoveAt(number-1);
+			}
+			else
+			{
+				System.Console.WriteLine("Invalid number, please try again.");
+			}
 		}
 	}
 }

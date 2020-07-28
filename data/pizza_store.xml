@@ -9,6 +9,14 @@
         <string>Cheese</string>
       </Toppings>
     </Pizza>
+    <Pizza>
+      <Name>Pepperoni Pizza</Name>
+      <Crust>Regular</Crust>
+      <Size>Medium</Size>
+      <Toppings>
+        <string>Pepperoni</string>
+      </Toppings>
+    </Pizza>
   </Pizzas>
   <time>0001-01-01T00:00:00</time>
 </Order>
