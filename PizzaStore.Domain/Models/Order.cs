@@ -52,6 +52,26 @@ namespace PizzaStore.Domain.Models
 				System.Console.WriteLine("Pizza " + counter + " ; " + p);
 				counter += 1;
 			}
+			System.Console.WriteLine("Would you like to remove a Pizza?");
+			if (System.Console.ReadLine().Equals("yes", StringComparison.InvariantCultureIgnoreCase))
+			{
+				RemovePizza(order);
+			}
+		}
+
+		public void RemovePizza(Order order)
+		{
+		System.Console.WriteLine("Which Pizza would you like to remove? Enter the number");
+		int number;
+		int.TryParse(System.Console.ReadLine(), out number);
+		if (number < order.Pizzas.Count)
+		{
+			order.Pizzas.RemoveAt(number-1);
+		}
+		else
+		{
+			System.Console.WriteLine("Invalid number, please try again.")
+		}
 		}
 	}
 }
