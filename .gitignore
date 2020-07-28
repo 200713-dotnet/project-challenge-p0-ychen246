@@ -4,3 +4,4 @@ obj/
 data/
 .vscode/launch.json
 .vscode/tasks.json
+PizzaStore.Storing/PizzaStoreDBContext.cs
