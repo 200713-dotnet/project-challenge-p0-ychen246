@@ -34,7 +34,7 @@ namespace PizzaStore.Storing.Repositories
 		public List<domain.Pizza> ReadAll()
 		{
 			var domainPizzaList = new List<domain.Pizza>();
-			List<string> topList = new List<string>;
+			List<string> topList = new List<string>();
 			foreach(var pizza in _db.Pizza.ToList())
   		    {
 				foreach (var topping in _db.Topping.ToList())
