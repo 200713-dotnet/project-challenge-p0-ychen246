@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Order xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Pizzas>
-    <Pizza>
-      <Name>Cheese Pizza</Name>
-      <Crust>Regular</Crust>
-      <Size>Small</Size>
-      <Toppings>
-        <string>Cheese</string>
-      </Toppings>
-    </Pizza>
-    <Pizza>
-      <Name>Pepperoni Pizza</Name>
-      <Crust>Regular</Crust>
-      <Size>Medium</Size>
-      <Toppings>
-        <string>Pepperoni</string>
-      </Toppings>
-    </Pizza>
-  </Pizzas>
-  <time>0001-01-01T00:00:00</time>
+  <Pizzas />
+  <time>2020-07-28T11:55:49.2655095-05:00</time>
 </Order>
