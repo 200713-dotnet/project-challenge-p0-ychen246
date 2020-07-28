@@ -28,6 +28,7 @@ namespace PizzaStore.Domain.Models
 		public Order()
 		{
 			Pizzas = new List<Pizza>();
+			time = DateTime.Now;
 		}
 
 		public decimal PriceOrder
