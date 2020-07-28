@@ -53,6 +53,8 @@ namespace PizzaStore.Domain.Models
 				System.Console.WriteLine("Pizza " + counter + " ; " + p);
 				counter += 1;
 			}
+			System.Console.WriteLine("There are " + order.Pizzas.Count + " pizza in the cart.");
+			System.Console.WriteLine("The total price is $" + order.PriceOrder );
 			System.Console.WriteLine("Would you like to remove a Pizza?");
 			if (System.Console.ReadLine().Equals("yes", StringComparison.InvariantCultureIgnoreCase))
 			{
