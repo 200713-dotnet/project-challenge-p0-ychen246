@@ -23,6 +23,7 @@ create table Pizza.Pizza
 (
 	PizzaId int not null primary key identity (1,1),
 	PizzaName nvarchar(250),
+	PizzaCrust nvarchar(250),
 	Size nvarchar(250),
 	Price money
 )

@@ -4,20 +4,10 @@
     <Pizza>
       <Name>Cheese Pizza</Name>
       <Crust>Regular</Crust>
-      <Size>Small</Size>
+      <Size>small</Size>
       <Toppings>
         <string>Cheese</string>
       </Toppings>
-      <Price>0</Price>
-    </Pizza>
-    <Pizza>
-      <Name>Cheese Pizza</Name>
-      <Crust>Regular</Crust>
-      <Size>Large</Size>
-      <Toppings>
-        <string>Pepperoni</string>
-      </Toppings>
-      <Price>0</Price>
     </Pizza>
   </Pizzas>
 </Order>

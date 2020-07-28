@@ -13,6 +13,7 @@ namespace PizzaStore.Storing
 
         public int PizzaId { get; set; }
         public string PizzaName { get; set; }
+        public string PizzaCrust { get; set; }
         public string Size { get; set; }
         public decimal? Price { get; set; }
 
