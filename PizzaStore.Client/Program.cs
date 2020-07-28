@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using PizzaStore.Domain.Models;
+using PizzaStore.Storing.Repositories;
+
 
 namespace PizzaStore.Client
 {
@@ -33,12 +35,26 @@ namespace PizzaStore.Client
 			System.Console.WriteLine("May I have your last name?");
 			string ln = Console.ReadLine();
 
+			System.Console.WriteLine("Please select a Store.");
+			StoreRepository sr = new StoreRepository();
+			List<Store> stores = sr.ReadAll();
+			int counter = 1;
+			foreach (Store st in stores)
+			{
+				System.Console.WriteLine(counter + ": " + st.ToString());
+				counter += 1;
+			}
+
+			int select;
+			int.TryParse(Console.ReadLine(), out select);
+
 			var starter = new Starter();
       		var user = new User(fn, ln);
    			var store = new Store();
 
+			
+
 			System.Console.WriteLine("Enter 1 for new orders or 2 to view order history.");
-			int select;
 			int.TryParse(Console.ReadLine(), out select);
 			switch(select)
 			{
@@ -64,6 +80,10 @@ namespace PizzaStore.Client
 			string sn = Console.ReadLine();
 			System.Console.WriteLine("The address of the store?");
 			string sa = Console.ReadLine();
+
+			Store store = new Store(sn, sa);
+			StoreRepository sr = new StoreRepository();
+			sr.Create(store);
 
 			System.Console.WriteLine("Enter 1 to see order history or 2 for sales.");
 			int select;

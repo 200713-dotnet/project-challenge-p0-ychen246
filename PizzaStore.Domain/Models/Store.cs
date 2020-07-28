@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text;
 
 namespace PizzaStore.Domain.Models
 {
@@ -21,5 +22,11 @@ namespace PizzaStore.Domain.Models
     	{
       		Orders = new List<Order>();
     	}
+
+		public override string ToString()
+    	{
+			StringBuilder sb = new StringBuilder();
+     		 return $"{Name} at {Address}";
+   		}
 	}
 }
